@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:contex="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:context="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/spring-context.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 引用ubbo服务 -->
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="sms-user-web"/>
+    <dubbo:registry protocol="zookeeper" address="118.25.70.241:2181"/>
+    <!-- 要使用的服务 -->
+    <dubbo:reference interface="com.zju.sms.manager.service.IAdminService" id="adminServiceImpl"/>
+
+
+
+</beans>

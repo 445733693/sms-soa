@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>sms-manager-domain</module>
+        <module>sms-manager-interface</module>
+        <module>sms-manager-service</module>
+        <module>sms-manager-dao</module>
+    </modules>
+    <parent>
+    <artifactId>sms-parent</artifactId>
+    <groupId>com.zju.sms</groupId>
+    <version>1.0.0</version>
+    <relativePath>../sms-parent/pom.xml</relativePath>
+  </parent>
+  <artifactId>sms-manager</artifactId>
+  <packaging>pom</packaging>
+
+    <dependencies>
+
+    </dependencies>
+    <build>
+
+    </build>
+</project>

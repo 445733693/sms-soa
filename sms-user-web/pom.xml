@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>sms-parent</artifactId>
+    <groupId>com.zju.sms</groupId>
+    <version>1.0.0</version>
+    <relativePath>../sms-parent/pom.xml</relativePath>
+  </parent>
+
+  <artifactId>sms-user-web</artifactId>
+  <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.zju.sms</groupId>
+            <artifactId>sms-manager-domain</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zju.sms</groupId>
+            <artifactId>sms-message-domain</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zju.sms</groupId>
+            <artifactId>sms-record-domain</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zju.sms</groupId>
+            <artifactId>sms-manager-interface</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zju.sms</groupId>
+            <artifactId>sms-message-interface</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zju.sms</groupId>
+            <artifactId>sms-record-interface</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zju.sms</groupId>
+            <artifactId>sms-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

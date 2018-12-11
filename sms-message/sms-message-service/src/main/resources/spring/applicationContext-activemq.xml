@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+    <!--配置能够产生connection的connectionFactory，由JMS对应的服务商提供-->
+    <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <constructor-arg name="brokerURL" value="tcp://118.25.70.241:61616"/>
+    </bean>
+    <!--配置spring管理真正connectionfactory的connectionfactory,相当于spring对connectionfactory的一层封装-->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="targetConnectionFactory" ref="targetConnectionFactory"/>
+    </bean>
+    <!--配置生产者-->
+    <!--spring使用JMS工具类，可以用来发送和接收消息-->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+    </bean>
+    <!--配置destination-->
+    <!--队列目的地-->
+    <bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="spring-queue"/>
+    </bean>
+    <!--话题目的地-->
+    <bean id="topicDestination" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg value="spring-topic"/>
+    </bean>
+
+
+
+</beans>
