@@ -48,6 +48,12 @@
             <artifactId>sms-manager-dao</artifactId>
             <version>1.0.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.zju.sms</groupId>
+            <artifactId>sms-record-dao</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>
